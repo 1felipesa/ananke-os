@@ -1,0 +1,35 @@
+{
+  "name": "sales_ecommerce",
+  "title": "Relatório Executivo de Vendas e E-commerce",
+  "description": "Template analítico para pedidos, vendas online e desempenho comercial.",
+  "expected_dimensions": ["date", "category", "status"],
+  "metric_mappings": {
+    "revenue": ["revenue", "valor_total", "faturamento", "total_amount", "valor", "preco_total", "venda"],
+    "orders": ["orders", "pedidos", "total_pedidos", "order_id", "numero_pedido", "quantidade_pedidos"],
+    "items_sold": ["items_sold", "quantidade", "qtd", "itens", "units"],
+    "discounts": ["discounts", "desconto", "descontos", "discount_amount"]
+  },
+  "calculated_metrics": [
+    {
+      "key": "average_ticket",
+      "label": "Ticket Médio",
+      "formula": "revenue / orders",
+      "format": "currency",
+      "higher_is_better": true
+    },
+    {
+      "key": "items_per_order",
+      "label": "Itens por Pedido",
+      "formula": "items_sold / orders",
+      "format": "decimal",
+      "higher_is_better": true
+    },
+    {
+      "key": "discount_rate",
+      "label": "Taxa de Desconto (%)",
+      "formula": "discounts / (revenue + discounts) * 100",
+      "format": "percent",
+      "higher_is_better": false
+    }
+  ]
+}

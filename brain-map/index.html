@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapeamento visual e interativo em 3D de todos os agentes, skills, workflows e governança SDD do Ananke OS.">
+    <meta property="og:title" content="Ananke OS • 3D Brain Map Interativo">
+    <meta property="og:description" content="Navegação em rede neural volumétrica pelo ecossistema de inteligência artificial do Ananke OS.">
+    <meta property="og:type" content="website">
+    <title>Ananke OS • 3D Brain Map Interativo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 3D Force Graph & Three.js via CDN -->
+    <script src="https://unpkg.com/3d-force-graph"></script>
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="brain-map.css">
+</head>
+<body>
+
+    <!-- 3D Canvas WebGL Layer -->
+    <div id="canvas-container" role="region" aria-label="Espaço de Visualização 3D da Rede Neural"></div>
+
+    <!-- HUD Header -->
+    <header class="hud-header">
+        <div class="brand-badge">
+            <span class="brand-icon">⚡</span>
+            <div class="brand-info">
+                <h1>Ananke OS</h1>
+                <p>Spec-Driven Autonomy // Zero Vibe Coding</p>
+            </div>
+        </div>
+
+        <div class="search-wrapper">
+            <label for="brain-search" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Buscar no Brain Map</label>
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+                type="text" 
+                id="brain-search" 
+                class="search-input" 
+                placeholder="Buscar agente, comando ou tema (ex: vídeo, mcp, sql)..."
+                autocomplete="off"
+                aria-label="Buscar agentes, workflows ou skills no grafo"
+            >
+        </div>
+    </header>
+
+    <!-- Legenda & Bloco de Contexto -->
+    <aside class="legend-card" aria-label="Legenda e Filtros da Rede Neural">
+        <h2>
+            <span>Legenda Neural</span>
+            <span style="font-size: 10px; color: #64748b;">Clique para filtrar</span>
+        </h2>
+        <div class="legend-items">
+            <div class="legend-item" data-filter="all">
+                <span class="legend-bullet" style="background: #ffffff; color: #ffffff;"></span>
+                <span class="legend-text">Visão Geral Completa</span>
+                <span class="legend-count">Todos</span>
+            </div>
+            <div class="legend-item" data-filter="agent">
+                <span class="legend-bullet" style="background: var(--color-agent); color: var(--color-agent);"></span>
+                <span class="legend-text">Agentes Especialistas</span>
+                <span class="legend-count">35</span>
+            </div>
+            <div class="legend-item" data-filter="workflow">
+                <span class="legend-bullet" style="background: var(--color-workflow); color: var(--color-workflow);"></span>
+                <span class="legend-text">Workflows (/comandos)</span>
+                <span class="legend-count">21</span>
+            </div>
+            <div class="legend-item" data-filter="category">
+                <span class="legend-bullet" style="background: var(--color-category); color: var(--color-category);"></span>
+                <span class="legend-text">Macro-Categorias</span>
+                <span class="legend-count">8</span>
+            </div>
+            <div class="legend-item" data-filter="sdd">
+                <span class="legend-bullet" style="background: var(--color-sdd); color: var(--color-sdd);"></span>
+                <span class="legend-text">Ciclo de Governança SDD</span>
+                <span class="legend-count">4</span>
+            </div>
+        </div>
+        <div class="legend-hint">
+            <strong>💡 Como Navegar:</strong><br>
+            • <strong>Girar:</strong> Botão esquerdo + arrastar<br>
+            • <strong>Zoom:</strong> Scroll do mouse<br>
+            • <strong>Inspecionar:</strong> Clique em qualquer esfera para abrir os detalhes.
+        </div>
+    </aside>
+
+    <!-- Barra Inferior de Métricas Ativas -->
+    <nav class="stats-bar" aria-label="Estatísticas Globais do Kit">
+        <div class="stat-pill" data-filter="agent">
+            <span class="stat-dot" style="background: var(--color-agent);"></span>
+            <span>35 Agentes</span>
+        </div>
+        <div class="stat-pill" data-filter="workflow">
+            <span class="stat-dot" style="background: var(--color-workflow);"></span>
+            <span>21 Workflows</span>
+        </div>
+        <div class="stat-pill" data-filter="category">
+            <span class="stat-dot" style="background: var(--color-category);"></span>
+            <span>8 Núcleos</span>
+        </div>
+        <div class="stat-pill" data-filter="sdd">
+            <span class="stat-dot" style="background: var(--color-sdd);"></span>
+            <span>4 Fases SDD</span>
+        </div>
+    </nav>
+
+    <!-- Controles Flutuantes de Zoom 3D -->
+    <aside class="zoom-controls" aria-label="Controles de Navegação e Zoom">
+        <button id="btn-zoom-in" class="zoom-btn" title="Aproximar Zoom (+)" aria-label="Aproximar">+</button>
+        <button id="btn-zoom-out" class="zoom-btn" title="Afastar Zoom (-)" aria-label="Afastar">−</button>
+        <button id="btn-reset-view" class="zoom-btn zoom-btn-reset" title="Restaurar Visão Global" aria-label="Restaurar Visão">↺</button>
+    </aside>
+
+    <!-- Drawer Lateral de Inspeção de Nós -->
+    <aside id="drawer-inspector" class="drawer-inspector" aria-label="Painel de Detalhes do Nó">
+        <div class="drawer-header">
+            <span id="drawer-type-badge" class="badge-type">Entidade</span>
+            <button id="drawer-close-btn" class="close-btn" aria-label="Fechar painel de detalhes">&times;</button>
+        </div>
+
+        <div>
+            <h2 id="drawer-title" class="drawer-title">Nome do Nó</h2>
+            <div id="drawer-subtitle" class="drawer-subtitle">Subtítulo / Comando</div>
+        </div>
+
+        <div id="drawer-desc" class="drawer-desc">
+            Descrição detalhada do elemento selecionado no grafo neural.
+        </div>
+
+        <div class="drawer-section">
+            <h3>Conexões Neurais Diretas</h3>
+            <div id="drawer-connections" class="connections-list">
+                <!-- Chips populados dinamicamente via JS -->
+            </div>
+        </div>
+
+        <div class="action-box">
+            <strong>Instrução Rápida de Uso</strong>
+            <span>Para acionar este componente em uma conversa, convoque o especialista com <code>@[nome-do-agente]</code> ou execute o comando correspondente <code>/slash</code>.</span>
+        </div>
+    </aside>
+
+    <!-- Scripts do Brain Map -->
+    <script src="brain-data.js"></script>
+    <script src="brain-graph.js"></script>
+</body>
+</html>

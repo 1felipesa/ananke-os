@@ -1,0 +1,43 @@
+{
+  "name": "marketing_ads",
+  "title": "Relatório de Performance de Anúncios e Campanhas",
+  "description": "Template analítico para campanhas de marketing (Meta Ads, Google Ads, TikTok Ads).",
+  "expected_dimensions": ["date", "campaign_name", "platform"],
+  "metric_mappings": {
+    "spend": ["spend", "valor_gasto", "gasto", "custo", "cost", "investimento"],
+    "impressions": ["impressions", "impressoes", "impressoes_totais", "views"],
+    "clicks": ["clicks", "cliques", "link_clicks", "cliques_no_link"],
+    "conversions": ["conversions", "conversoes", "leads", "compras", "purchases", "results"],
+    "revenue": ["revenue", "receita", "valor_conversao", "conversion_value", "faturamento"]
+  },
+  "calculated_metrics": [
+    {
+      "key": "ctr",
+      "label": "CTR (%)",
+      "formula": "clicks / impressions * 100",
+      "format": "percent",
+      "higher_is_better": true
+    },
+    {
+      "key": "cpc",
+      "label": "CPC Médio",
+      "formula": "spend / clicks",
+      "format": "currency",
+      "higher_is_better": false
+    },
+    {
+      "key": "cpa",
+      "label": "CPA Médio",
+      "formula": "spend / conversions",
+      "format": "currency",
+      "higher_is_better": false
+    },
+    {
+      "key": "roas",
+      "label": "ROAS",
+      "formula": "revenue / spend",
+      "format": "ratio",
+      "higher_is_better": true
+    }
+  ]
+}

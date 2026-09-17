@@ -1,0 +1,15 @@
+# Ananke OS - Optional Dependencies for Specialized Skill Scripts
+# Note: The core operating framework (checklist.py, verify_all.py, session_manager.py)
+# runs strictly on the Python Standard Library (Zero-dependency).
+
+# SQL & Tabular Analytics (skills/sql-analytics, skills/spreadsheet-wrangling)
+duckdb>=0.10.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Document & PDF Processing (skills/pdf-document-processing)
+pypdf>=4.0.0
+pdfplumber>=0.10.0
+
+# Advanced End-to-End UI Testing (skills/webapp-testing)
+playwright>=1.40.0
