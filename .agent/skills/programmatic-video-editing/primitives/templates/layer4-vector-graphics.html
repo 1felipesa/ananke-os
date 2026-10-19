@@ -1,0 +1,212 @@
+<!-- ==========================================================================
+     CAMADA 4: VECTOR & METRIC PRIMITIVES (Motion Graphics Profissionais)
+     Posicionamento Seguro Padrão: Y = 240px a 820px
+     Substitui divs estáticas por traçado vetorial SVG e dados animados.
+     ========================================================================== -->
+
+<div class="layer4-container" aria-label="Layer 4 Motion Graphics and Metrics">
+
+  <!-- 1. CARD DE MÉTRICA COM NUMBER TICKER -->
+  <div class="glass-panel metric-card" id="metricCard">
+    <div class="metric-header">
+      <span class="metric-label">CONVERSÃO ESTIMADA</span>
+      <span class="status-pill mini">
+        <span class="indicator-dot"></span>
+        <span>+340%</span>
+      </span>
+    </div>
+    <div class="metric-value-row">
+      <span class="metric-symbol">R$</span>
+      <span class="metric-number" id="metricCounter">0</span>
+    </div>
+    <div class="metric-subtext">Baseado no modelo validado de retenção</div>
+  </div>
+
+  <!-- 2. GRÁFICO VETORIAL DE LINHA (SVG Animated Trendline) -->
+  <div class="glass-panel chart-card" id="chartCard">
+    <div class="chart-header">
+      <span class="chart-title">CURVA DE ESCALA</span>
+      <span class="chart-badge">LIVE</span>
+    </div>
+    
+    <svg class="chart-svg" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Gradiente da Área sob a Curva -->
+        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--brand-accent)" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="var(--brand-accent)" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Grade de Apoio Sutil -->
+      <line x1="0" y1="60" x2="800" y2="60" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"/>
+      <line x1="0" y1="140" x2="800" y2="140" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"/>
+      <line x1="0" y1="220" x2="800" y2="220" stroke="rgba(255,255,255,0.06)"/>
+
+      <!-- Área Preenchida com Gradiente -->
+      <path class="chart-area" d="M 40 200 C 200 190, 320 140, 480 90 C 620 40, 700 30, 760 20 L 760 220 L 40 220 Z" fill="url(#chartGradient)"/>
+
+      <!-- Linha Vetorial Animada (stroke-dashoffset manipulado por motion-curves.js) -->
+      <path class="chart-line" id="trendLine" d="M 40 200 C 200 190, 320 140, 480 90 C 620 40, 700 30, 760 20" stroke="var(--brand-accent)" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- Ponto de Foco Pulsante -->
+      <circle class="chart-point" cx="760" cy="20" r="10" fill="var(--brand-accent)"/>
+      <circle class="chart-point-pulse" cx="760" cy="20" r="18" stroke="var(--brand-accent)" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <!-- 3. BOX DE COMPARAÇÃO SPLIT (Antes vs. Depois / Errado vs. Certo) -->
+  <div class="split-compare-container" id="splitBox">
+    <div class="glass-panel compare-col bad">
+      <div class="compare-tag">SEM ESTRUTURA</div>
+      <div class="compare-desc">Retenção de 15% nos primeiros 3 segundos</div>
+    </div>
+    <div class="glass-panel compare-col good">
+      <div class="compare-tag">COM 5 CAMADAS</div>
+      <div class="compare-desc">Retenção superior a 78% com alto engajamento</div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+.layer4-container {
+  position: absolute;
+  top: var(--safe-graphics-top);
+  left: var(--safe-margin-x);
+  right: var(--safe-margin-x);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 20;
+}
+
+/* 1. Metric Card */
+.metric-card {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-label {
+  font-family: var(--brand-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brand-text-muted);
+  text-transform: uppercase;
+}
+
+.status-pill.mini {
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.metric-symbol {
+  font-family: var(--brand-font-display);
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--brand-accent);
+}
+
+.metric-number {
+  font-family: var(--brand-font-display);
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--brand-text);
+  line-height: 1;
+}
+
+.metric-subtext {
+  font-size: 18px;
+  color: var(--brand-text-muted);
+}
+
+/* 2. Chart Card */
+.chart-card {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-title {
+  font-family: var(--brand-font-display);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand-text);
+  text-transform: uppercase;
+}
+
+.chart-badge {
+  padding: 4px 10px;
+  background: rgba(var(--brand-accent-rgb, 16, 185, 129), 0.15);
+  border: 1px solid var(--brand-accent);
+  color: var(--brand-accent);
+  border-radius: var(--brand-radius-pill);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 220px;
+  overflow: visible;
+}
+
+/* 3. Split Comparison */
+.split-compare-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.compare-col {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.compare-col.bad .compare-tag {
+  color: #EF4444;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.compare-col.good .compare-tag {
+  color: var(--brand-accent);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.compare-desc {
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--brand-text);
+}
+</style>

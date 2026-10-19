@@ -9,9 +9,9 @@
 
 **Ananke OS** is a deterministic cognitive operating system consisting of:
 
-- **35 Specialist Agents** - Role-based AI personas
-- **54 Skills** - Domain-specific knowledge modules
-- **21 Workflows** - Slash command procedures
+- **38 Specialist Agents** - Role-based AI personas
+- **62 Skills** - Domain-specific knowledge modules
+- **24 Workflows** - Slash command procedures
 
 ---
 
@@ -19,7 +19,7 @@
 
 ```plaintext
 ananke-os/
-├── .agent/                  # 35 Agents, 54 Skills, 21 Workflows, Rules & Master Scripts
+├── .agent/                  # 37 Agents, 61 Skills, 23 Workflows, Rules & Master Scripts
 ├── brain-map/               # Interactive 3D Neural Constellation Map (WebGL)
 ├── data/                    # Ingestion, Templates & Automated Batch Reports
 ├── integrations/            # External APIs, Google Analytics, Meta Ads & MCP Connectors
@@ -28,7 +28,7 @@ ananke-os/
 
 ---
 
-## 🤖 Agents (35)
+## 🤖 Agents (38)
 
 Specialist AI personas for different domains.
 
@@ -44,6 +44,7 @@ Specialist AI personas for different domains.
 | `css-architect`          | Modern CSS, UI styling     | premium-css-patterns, frontend-design                    |
 | `social-media-designer`  | Social media art & carousels| social-content-design, copywriting-frameworks, frontend-design |
 | `video-script-architect` | Video scripts (Reels & YT) | video-scriptwriting-frameworks, copywriting-frameworks, clean-code |
+| `motion-video-engineer`  | Programmatic video & motion| programmatic-video-editing, video-scriptwriting-frameworks, premium-css-patterns, clean-code |
 | `marketing-analyst`      | Social media, ads analytics| social-media-analytics, python-patterns, frontend-design  |
 | `meta-ads-specialist`    | Meta/Instagram Ads, ROAS   | social-media-analytics, copywriting-frameworks, clean-code |
 | `google-analytics-specialist` | GA4, Conversions, Tracking | mcp-builder, python-patterns, clean-code             |
@@ -69,10 +70,12 @@ Specialist AI personas for different domains.
 | `code-archaeologist`     | Legacy code, refactoring   | clean-code, refactoring-patterns, code-review-checklist  |
 | `explorer-agent`         | Codebase analysis          | clean-code, architecture, plan-writing, brainstorming, systematic-debugging |
 | `business-strategist`    | Business strategy & pricing| brainstorming, pricing-strategy, plan-writing            |
+| `email-marketing-specialist` | E-mail marketing & outbound| email-marketing-strategy, cold-email-outreach, email-template-design, lead-scraping-enrichment, copywriting-frameworks, clean-code |
+| `blog-content-specialist`| Thought Leadership & Blog  | notebooklm-knowledge-retrieval, seo-blog-architecture, thought-leadership-writing, copywriting-frameworks, seo-fundamentals, clean-code |
 
 ---
 
-## 🧩 Skills (54)
+## 🧩 Skills (62)
 
 Modular knowledge domains that agents can load on-demand. based on task context.
 
@@ -173,6 +176,14 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 | `copywriting-frameworks` | Frameworks de persuasão (AIDA, PAS), gatilhos mentais    |
 | `ux-writing`             | Diretrizes de escrita para interfaces claras             |
 | `video-scriptwriting-frameworks` | Roteirização audiovisual, ganchos e teleprompter |
+| `programmatic-video-editing` | Edição programática em 5 camadas (HyperFrames/Remotion), safe zones |
+| `email-marketing-strategy` | Funis de automação, segmentação e métricas de e-mail     |
+| `cold-email-outreach`    | Prospecção fria B2B, entregabilidade DNS e anti-spam     |
+| `email-template-design`  | Templates HTML tabulares (Outlook/Gmail) e inlining CSS  |
+| `lead-scraping-enrichment` | Raspagem ética de leads, extração de contatos e CSV      |
+| `notebooklm-knowledge-retrieval` | Extração de evidências e ancoragem factual via MCP NotebookLM |
+| `seo-blog-architecture`  | Arquitetura semântica H1-H4, search intent, slugs e snippets |
+| `thought-leadership-writing` | Redação de liderança de pensamento, anti-fluff e co-criação |
 
 ### Shell/CLI
 
@@ -196,7 +207,7 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 
 ---
 
-## 🔄 Workflows (21)
+## 🔄 Workflows (24)
 
 Slash command procedures. Invoke with `/command`.
 
@@ -218,11 +229,14 @@ Slash command procedures. Invoke with `/command`.
 | `/preview`       | Preview changes          |
 | `/refactor`      | Clean code & tech debt   |
 | `/script`        | Video scripts (Reels/YT) |
+| `/reel`          | Programmatic 5-layer video editing (HyperFrames/Remotion) |
 | `/sdd`           | Start Spec-Driven flow   |
 | `/sql`           | DuckDB SQL queries       |
 | `/status`        | Check project status     |
 | `/strategy`      | Business model & pricing |
 | `/test`          | Run tests                |
+| `/email`         | E-mail marketing, cold outreach & templates |
+| `/blog`          | Artigos de blog e Thought Leadership com NotebookLM |
 
 ---
 
@@ -254,6 +268,9 @@ skill-name/
 | `spreadsheet-wrangling`   | 2     | CSV/XLSX profiling & normalization  |
 | `sql-analytics`           | 2     | DuckDB SQL query engine             |
 | `pdf-document-processing` | 2     | PDF table & text extraction         |
+| `email-template-design`   | 2     | HTML tabular inlining & plaintext mirror |
+| `lead-scraping-enrichment`| 2     | Web contact extraction & CSV export |
+| `programmatic-video-editing`| 7   | Motor de primitivas (CSS/JS/HTML), safe zones & stills |
 
 ---
 
@@ -312,10 +329,10 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
-| **Total Agents**    | 35                            |
-| **Total Skills**    | 54                            |
-| **Total Workflows** | 21                            |
-| **Total Scripts**   | 5 (master) + 21 (skill-level) |
+| **Total Agents**    | 38                            |
+| **Total Skills**    | 62                            |
+| **Total Workflows** | 24                            |
+| **Total Scripts**   | 5 (master) + 25 (skill-level) |
 | **Coverage**        | ~90% web/mobile development   |
 
 ---
@@ -328,6 +345,7 @@ For details, see [scripts/README.md](scripts/README.md)
 | UI/CSS       | `css-architect`          | premium-css-patterns, frontend-design |
 | Social Post  | `social-media-designer`  | social-content-design, copywriting-frameworks |
 | Video Script | `video-script-architect` | video-scriptwriting-frameworks, copywriting-frameworks |
+| Video Motion | `motion-video-engineer`  | programmatic-video-editing, video-scriptwriting-frameworks |
 | API & MCP    | `integration-engineer`   | api-integration-patterns, mcp-builder |
 | Backend      | `backend-specialist`     | api-patterns, nodejs-best-practices   |
 | Analytics    | `marketing-analyst`      | social-media-analytics, python-patterns |

@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # ⚡ ANANKE OS
 
@@ -8,8 +8,8 @@
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)](https://github.com)
 [![Methodology](https://img.shields.io/badge/Methodology-Spec--Driven%20Development-blue?style=for-the-badge)](https://github.com)
 [![Syntax](https://img.shields.io/badge/Syntax-EARS%20Format-8A2BE2?style=for-the-badge)](https://github.com)
-[![Agents](https://img.shields.io/badge/Specialists-35%20Agents-FACC15?style=for-the-badge)](.agent/docs/categorias.md)
-[![Skills](https://img.shields.io/badge/Skills-54%20Modules-00D2FF?style=for-the-badge)](.agent/docs/categorias.md)
+[![Agents](https://img.shields.io/badge/Specialists-38%20Agents-FACC15?style=for-the-badge)](.agent/docs/categorias.md)
+[![Skills](https://img.shields.io/badge/Skills-62%20Modules-00D2FF?style=for-the-badge)](.agent/docs/categorias.md)
 [![Checklist](https://img.shields.io/badge/Quality%20Gate-6%2F6%20Passed-10B981?style=for-the-badge)](.agent/scripts/)
 
 <br>
@@ -67,10 +67,10 @@ O Ananke OS possui um **gêmeo digital topológico tridimensional** localizado e
 <div align="center">
 
 | Cor | Elemento | Quantidade | Descrição |
-| :---: | :--- | :---: | :--- |
-| 🟡 | **Agentes Especialistas** | **35 nós** | Personas ativas de IA com raciocínio hiperfocado. |
-| 🔴 | **Workflows de Comando** | **21 nós** | Procedimentos acionados por `/comando` no chat. |
-| 🔵 | **Skills & Conexões** | **54 nós** | Módulos técnicos com partículas luminosas em tempo real. |
+| :---: | :--- | :--- :--- | :--- |
+| 🟡 | **Agentes Especialistas** | **38 nós** | Personas ativas de IA com raciocínio hiperfocado. |
+| 🔴 | **Workflows de Comando** | **24 nós** | Procedimentos acionados por `/comando` no chat. |
+| 🔵 | **Skills & Conexões** | **62 nós** | Módulos técnicos com partículas luminosas em tempo real. |
 | 🟠 | **Macro-Categorias** | **8 núcleos** | Grandes centros gravitacionais de competência do OS. |
 | 🟢 | **Ciclo de Governança** | **4 fases** | A espinha dorsal metodológica do SDD. |
 
@@ -78,13 +78,13 @@ O Ananke OS possui um **gêmeo digital topológico tridimensional** localizado e
 
 * **Navegação Espacial 360°:** Rotação orbital contínua, pan de câmera e zoom suave via scroll ou botões táteis (`+` / `−` / `↺`).
 * **Inspeção Neural:** Clique em qualquer esfera para centralizar a câmera, iluminar conexões e abrir painel lateral com detalhes.
-* **Busca em Tempo Real:** Digite palavras-chave (ex: `vídeo`, `mcp`, `sdd`, `backend`) para filtrar instantaneamente a constelação.
+* **Busca em Tempo Real:** Digite palavras-chave (ex: `vídeo`, `flow`, `mcp`, `sdd`, `email`) para filtrar instantaneamente a constelação.
 
 👉 **Para visualizar:** Abra [`brain-map/index.html`](brain-map/index.html) em qualquer navegador moderno.
 
 ---
 
-## 👥 4. O Panteão: 35 Agentes Especialistas em 8 Hubs
+## 👥 4. O Panteão: 38 Agentes Especialistas em 8 Hubs
 
 Os agentes do Ananke OS são personas profissionais com instruções de sistema estritas, proibição de premissas vagas e domínio das melhores práticas de mercado:
 
@@ -94,7 +94,7 @@ anankeos/
 ├── 🎨 Engenharia Frontend & UI/UX     --> @frontend-specialist, @css-architect, @mobile-developer
 ├── ⚙️ Backend, Integrações & MCP      --> @backend-specialist, @integration-engineer, @api-designer, @database-architect
 ├── 📊 Dados, BI & Análise             --> @data-analyst, @document-analyst, @data-viz-architect
-├── 🚀 Marketing, Conteúdo & Mídia     --> @copywriter-ux, @social-media-designer, @video-script-architect, @marketing-analyst
+├── 🚀 Marketing, Conteúdo & Mídia     --> @copywriter-ux, @social-media-designer, @video-script-architect, @motion-video-engineer, @email-marketing-specialist, @blog-content-specialist, @marketing-analyst
 ├── 🛡️ Segurança & Infraestrutura      --> @security-auditor, @penetration-tester, @devops-engineer, @performance-optimizer
 ├── 🧪 Qualidade, Testes & Diagnóstico  --> @test-engineer, @qa-automation-engineer, @debugger, @code-archaeologist
 └── 💼 Estratégia de Negócio & Produto --> @business-strategist, @product-manager, @product-owner
@@ -112,7 +112,10 @@ Comandos rápidos para acionar os pipelines mestres do Ananke OS:
 | `/orchestrate <briefing>` | `@orchestrator` | Diagnostica, fatia e coordena múltiplos especialistas em paralelo |
 | `/connect <serviço>` | `@integration-engineer` | Conecta APIs externas e servidores MCP com resiliência e testes |
 | `/script <briefing>` | `@video-script-architect` | Roteiriza vídeos para teleprompter e tabela de edição em 2 colunas |
+| `/reel <arquivo>` | `@motion-video-engineer` | Edição programática de vídeo em 5 camadas (HyperFrames), motion GSAP e ponte Google Flow |
 | `/post <briefing>` | `@social-media-designer` | Gera carrosséis e posts com identidade visual guiada |
+| `/blog <notebook>` | `@blog-content-specialist` | Artigos de blog e Thought Leadership ancorados no Google NotebookLM |
+| `/email <briefing>` | `@email-marketing-specialist` | Campanhas de e-mail, cold outreach B2B, newsletters tabulares e leads |
 | `/copy <briefing>` | `@copywriter-ux` | Textos persuasivos de venda, microcopy e páginas de alta conversão |
 | `/strategy <tema>` | `@business-strategist` | Modelagem comercial, esteira de produtos e precificação |
 | `/batch <frequência>` | `@data-analyst` | Processa dados em lote e gera Dashboard HTML (M3 Dark) em `data/reports/` |
@@ -120,6 +123,22 @@ Comandos rápidos para acionar os pipelines mestres do Ananke OS:
 | `/test` | `@test-engineer` | Criação e execução de suítes de teste automatizadas (AAA/TDD) |
 | `/preview` | `@orchestrator` | Inicializa servidor de desenvolvimento local para inspeção |
 | `/deploy` | `@devops-engineer` | Validações pré-voo e publicação segura em produção |
+
+---
+
+## 🌟 Novidades da Plataforma (Release Recente)
+
+- 🎬 **HyperFrames Parametric Motion Engine & Google Flow Bridge (`/reel`):**
+  - Motor de edição programática vertical (1080×1920) em 5 camadas: Take bruto, legendas temporais cinéticas, máscara/card dinâmico de rosto, motion graphics paramétricos a cada 2-3s e sound design.
+  - Curvas de aceleração física via GSAP (`back.out(1.7)` com overshoot orgânico), safe zones para Instagram Reels/TikTok e design tokens de marca adaptáveis (`video-tokens.css`).
+  - Automação headless via Playwright para o estúdio de IA criativa **Google Flow** (`flow.google.com`), permitindo listar projetos, descarregar assets e gerar clipes de B-roll usando os créditos Pro da sua conta Google sem configurações manuais repetitivas.
+- 💡 **NotebookLM Thought Leadership Suite (`/blog`):**
+  - Engenharia de artigos analíticos e liderança intelectual ancorados estritamente em cadernos do **Google NotebookLM** via conector MCP dedicado.
+  - Processo de co-construção socrática em blocos iterativos (Tese, Antítese, Síntese e Aplicação), com eliminação cirúrgica de clichês de IA (*AI Fluff*) e citações verificáveis.
+- ✉️ **E-mail Marketing & Outbound Leads Suite (`/email`):**
+  - Criação completa de sequências de prospecção ativa B2B (Cold Outreach), auditoria de entregabilidade DNS (SPF, DKIM, DMARC) e cálculo preditivo de pontuação anti-spam.
+  - Engenharia de templates de e-mail em HTML tabular responsivo testado contra 60+ clientes (Outlook desktop, Gmail, Apple Mail) com espelho em Plain Text.
+  - Raspagem ética da web e enriquecimento tabular de contatos com validação de sintaxe.
 
 ---
 
@@ -167,7 +186,7 @@ cd meu-projeto
 
 ```plaintext
 anankeos/
-├── .agent/                  # O Cérebro do OS: 35 Agentes, 54 Skills, 21 Workflows e Scripts
+├── .agent/                  # O Cérebro do OS: 38 Agentes, 62 Skills, 24 Workflows e Scripts
 │   └── docs/                # Taxonomia Completa (categorias.md) e Catálogo de Skills
 ├── .github/                 # Workflows Automatizados de CI/CD (GitHub Actions)
 ├── .specify/                # Especificações Formais (EARS), Diretivas e Brand Guidelines

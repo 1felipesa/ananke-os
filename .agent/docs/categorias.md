@@ -7,7 +7,7 @@
 
 ## 🧭 Visão Geral e Princípios de Organização
 
-O **Ananke OS** opera como um ecossistema modular composto por **35 Agentes Especialistas**, **54 Skills de Domínio**, **21 Workflows de Comando** e **Scripts de Validação Automatizada**.
+O **Ananke OS** opera como um ecossistema modular composto por **38 Agentes Especialistas**, **62 Skills de Domínio**, **24 Workflows de Comando** e **Scripts de Validação Automatizada**.
 
 Para eliminar suposições (*"vibe coding"*) e garantir precisão cirúrgica no direcionamento de cada demanda profissional, os recursos estão organizados em **Macro-Categorias por Tipo de Serviço e Escopo de Trabalho**.
 
@@ -30,7 +30,7 @@ flowchart LR
 
 ## 🗂️ Macro-Categorias de Serviços e Tarefas
 
-Abaixo está o mapeamento detalhado das 21 categorias funcionais do sistema:
+Abaixo está o mapeamento detalhado das 24 categorias funcionais do sistema:
 
 ---
 
@@ -356,6 +356,52 @@ Abaixo está o mapeamento detalhado das 21 categorias funcionais do sistema:
 
 ---
 
+### 22. Edição Programática de Vídeo, Motion Graphics e Automação Google Flow
+*Foco: Montagem e animação de vídeos verticais (1080×1920) em 5 camadas com física GSAP, safe zones para Instagram Reels/TikTok e integração headless com Google Flow.*
+
+* **Quando utilizar:** Renderização de vídeos programáticos baseados em HTML/CSS/GSAP (HyperFrames ou Remotion); sincronização de legendas cinéticas palavra por palavra; enquadramento de rosto em cards estilizados; geração de motion graphics paramétricos; geração autônoma de B-rolls via Google Flow (`flow.google.com`).
+* **Agentes Especialistas:**
+  * [`motion-video-engineer.md`](../agents/motion-video-engineer.md) - Engenheiro de vídeo programático e diretor de motion graphics automatizado.
+* **Skills Associadas:**
+  * [`programmatic-video-editing`](../skills/programmatic-video-editing/SKILL.md) - Motor de primitivas visuais (`video-tokens.css`, `motion-curves.js`), templates de camadas, cálculo de safe zones e ponte Google Flow (`google_flow_bridge.py`).
+  * [`video-scriptwriting-frameworks`](../skills/video-scriptwriting-frameworks/SKILL.md) - Análise de ritmo de corte e marcações de pós-produção.
+  * [`premium-css-patterns`](../skills/premium-css-patterns/SKILL.md) - Efeitos de iluminação volumétrica, ambient bloom e bordas translúcidas.
+* **Workflows Relacionados:** `/reel`
+* **Etapa no SDD:** Fase 4 (Implementação & Renderização Visual) e Growth.
+
+---
+
+### 23. E-mail Marketing, Prospecção Outbound B2B e Entregabilidade
+*Foco: Criação de funis de e-mail de alta conversão, sequências de cold outreach anti-spam, diagramação tabular compatível e prospecção ativa de contatos.*
+
+* **Quando utilizar:** Estruturação de réguas de automação de ciclo de vida (onboarding, nutrição, recuperação); redação de cadências de prospecção fria B2B; auditoria de entregabilidade DNS (SPF, DKIM, DMARC); codificação de templates HTML tabulares à prova de falhas para Outlook/Gmail; raspagem ética de leads e exportação CSV.
+* **Agentes Especialistas:**
+  * [`email-marketing-specialist.md`](../agents/email-marketing-specialist.md) - Especialista em copywriting de e-mail, entregabilidade e esteiras de automação.
+* **Skills Associadas:**
+  * [`email-marketing-strategy`](../skills/email-marketing-strategy/SKILL.md) - Réguas de automação, matrizes de segmentação e KPIs de conversão.
+  * [`cold-email-outreach`](../skills/cold-email-outreach/SKILL.md) - Frameworks anti-spam (PAS, BAB, AIDA) e aquecimento de domínio.
+  * [`email-template-design`](../skills/email-template-design/SKILL.md) - Engenharia HTML tabular responsivo, inlining CSS e versão Plain Text.
+  * [`lead-scraping-enrichment`](../skills/lead-scraping-enrichment/SKILL.md) - Raspagem de dados corporativos e enriquecimento tabular.
+* **Workflows Relacionados:** `/email`
+* **Etapa no SDD:** Fase 4 (Comunicação & Vendas) e Pós-lançamento (Growth).
+
+---
+
+### 24. Thought Leadership, Artigos de Blog e Ancoragem NotebookLM
+*Foco: Redação de artigos de blog analíticos de alta densidade intelectual ancorados estritamente em fontes reais do Google NotebookLM, com co-construção socrática em blocos.*
+
+* **Quando utilizar:** Produção de conteúdo de autoridade técnica e liderança intelectual (*Thought Leadership*); validação de teses contra bases de pesquisa via MCP NotebookLM; redação anti-clichê (*Zero AI Fluff*); hierarquia semântica para SEO (H1-H4, featured snippets).
+* **Agentes Especialistas:**
+  * [`blog-content-specialist.md`](../agents/blog-content-specialist.md) - Redator de autoridade e arquiteto de conteúdo analítico com ancoragem factual estrita.
+* **Skills Associadas:**
+  * [`thought-leadership-writing`](../skills/thought-leadership-writing/SKILL.md) - Princípios de densidade intelectual, tom reflexivo e co-construção em 4 blocos.
+  * [`notebooklm-knowledge-retrieval`](../skills/notebooklm-knowledge-retrieval/SKILL.md) - Protocolo de consulta e extração de evidências via MCP NotebookLM.
+  * [`seo-blog-architecture`](../skills/seo-blog-architecture/SKILL.md) - Hierarquia de cabeçalhos, clusters de palavras-chave LSI e otimização on-page.
+* **Workflows Relacionados:** `/blog`
+* **Etapa no SDD:** Fase 4 (Produção de Conteúdo e SEO Orgânico).
+
+---
+
 ## 🎯 Tabela de Consulta Rápida (Qual Especialista Acionar?)
 
 Use esta matriz para encontrar instantaneamente o par ideal de **Agente + Skill** para a tarefa do seu dia a dia:
@@ -385,6 +431,9 @@ Use esta matriz para encontrar instantaneamente o par ideal de **Agente + Skill*
 | Criar gráficos interativos e relatórios | [`data-viz-architect`](../agents/data-viz-architect.md) | [`data-visualization-patterns`](../skills/data-visualization-patterns/SKILL.md) | `/analyze` |
 | Escrever textos persuasivos de vendas ou UX | [`copywriter-ux`](../agents/copywriter-ux.md) | [`copywriting-frameworks`](../skills/copywriting-frameworks/SKILL.md) | `/copy` |
 | Escrever roteiro para Reels, Shorts ou YouTube | [`video-script-architect`](../agents/video-script-architect.md) | [`video-scriptwriting-frameworks`](../skills/video-scriptwriting-frameworks/SKILL.md) | `/script` |
+| Editar vídeo programático em 5 camadas (Reels/Motion) | [`motion-video-engineer`](../agents/motion-video-engineer.md) | [`programmatic-video-editing`](../skills/programmatic-video-editing/SKILL.md) | `/reel` |
+| Campanhas de e-mail, cold outreach e leads B2B | [`email-marketing-specialist`](../agents/email-marketing-specialist.md) | [`email-marketing-strategy`](../skills/email-marketing-strategy/SKILL.md) | `/email` |
+| Artigos de blog e liderança de pensamento (NotebookLM) | [`blog-content-specialist`](../agents/blog-content-specialist.md) | [`thought-leadership-writing`](../skills/thought-leadership-writing/SKILL.md) | `/blog` |
 | Configurar Docker, CI/CD ou publicar aplicação | [`devops-engineer`](../agents/devops-engineer.md) | [`deployment-procedures`](../skills/deployment-procedures/SKILL.md) | `/deploy` |
 | Coordenar múltiplos especialistas em paralelo | [`orchestrator`](../agents/orchestrator.md) | [`parallel-agents`](../skills/parallel-agents/SKILL.md) | `/orchestrate` |
 

@@ -2,16 +2,16 @@
  * Ananke OS - 3D Neural Brain Map Dataset
  * Spec-Driven Autonomy // Zero Vibe Coding
  * Complete ontological network graph data representing the entire system:
- * - 35 Specialist Agents
- * - 54 Skills
- * - 21 Workflows
+ * - 38 Specialist Agents
+ * - 62 Skills
+ * - 24 Workflows
  * - 4 SDD Lifecycle Phases
  * - 8 Macro-Categories / Central Nuclei
  * 
  * High Contrast Color Palette:
- * 🟡 Yellow (#FACC15)  - Specialist Agents (35)
- * 🔴 Red (#EF4444)     - Command Workflows (21)
- * 🔵 Cyan/Blue (#00D2FF) - Engineering Skills (54)
+ * 🟡 Yellow (#FACC15)  - Specialist Agents (38)
+ * 🔴 Red (#EF4444)     - Command Workflows (24)
+ * 🔵 Cyan/Blue (#00D2FF) - Engineering Skills (62)
  * 🟠 Orange (#FB923C)  - Macro-Categories / Core Nuclei (8)
  * 🟢 Green (#10B981)   - SDD Lifecycle Phases (4)
  */
@@ -266,6 +266,13 @@ const KIT_BRAIN_DATA = {
       description: "Roteirização audiovisual com teleprompter de baixa carga cognitiva e tabela de edição em 2 colunas."
     },
     {
+      id: "agent-motion-video-engineer",
+      type: "agent",
+      name: "motion-video-engineer",
+      category: "core-growth",
+      description: "Edição programática de vídeo e motion graphics em 5 camadas com HyperFrames e Remotion."
+    },
+    {
       id: "agent-social-media-designer",
       type: "agent",
       name: "social-media-designer",
@@ -278,6 +285,20 @@ const KIT_BRAIN_DATA = {
       name: "copywriter-ux",
       category: "core-growth",
       description: "Copywriting persuasivo de vendas aliado a UX Writing empático e sem atrito na interface."
+    },
+    {
+      id: "agent-email-marketing-specialist",
+      type: "agent",
+      name: "email-marketing-specialist",
+      category: "core-growth",
+      description: "E-mail marketing completo, cold outreach B2B, newsletters tabulares e entregabilidade técnica."
+    },
+    {
+      id: "agent-blog-content-specialist",
+      type: "agent",
+      name: "blog-content-specialist",
+      category: "core-growth",
+      description: "Redação de artigos de blog e Thought Leadership ancorada estritamente no Google NotebookLM via MCP com co-construção socrática em blocos."
     },
     {
       id: "agent-seo-specialist",
@@ -378,7 +399,7 @@ const KIT_BRAIN_DATA = {
       description: "Refinamento de backlog, redação de User Stories, critérios de aceite e priorização."
     },
 
-    // --- 4. WORKFLOWS DE COMANDO (VERMELHO) - 21 WORKFLOWS ---
+    // --- 4. WORKFLOWS DE COMANDO (VERMELHO) - 24 WORKFLOWS ---
     { id: "wf-sdd", type: "workflow", name: "/sdd", agent: "agent-sdd-specialist", description: "Inicia a fase 1 de especificação formal EARS antes de qualquer código." },
     { id: "wf-create", type: "workflow", name: "/create", agent: "agent-orchestrator", description: "Scaffolding de novas aplicações completas com portão obrigatório de SDD." },
     { id: "wf-plan", type: "workflow", name: "/plan", agent: "agent-project-planner", description: "Gera o plano técnico, arquitetura e tarefas em PLAN.md." },
@@ -392,6 +413,7 @@ const KIT_BRAIN_DATA = {
     { id: "wf-copy", type: "workflow", name: "/copy", agent: "agent-copywriter-ux", description: "Textos persuasivos de venda para landing pages e microcopy de interface." },
     { id: "wf-post", type: "workflow", name: "/post", agent: "agent-social-media-designer", description: "Geração de posts e carrosséis para redes sociais com roteiro visual." },
     { id: "wf-script", type: "workflow", name: "/script", agent: "agent-video-script-architect", description: "Roteirização audiovisual para teleprompter e tabela de edição em 2 colunas." },
+    { id: "wf-reel", type: "workflow", name: "/reel", agent: "agent-motion-video-engineer", description: "Edição programática e renderização de Reels verticais em 5 camadas com HyperFrames e motor de primitivas parametrizáveis." },
     { id: "wf-refactor", type: "workflow", name: "/refactor", agent: "agent-code-archaeologist", description: "Refatoração estrutural de código e eliminação de débito técnico." },
     { id: "wf-debug", type: "workflow", name: "/debug", agent: "agent-debugger", description: "Investigação metódica em 4 fases para identificação de causa-raiz." },
     { id: "wf-test", type: "workflow", name: "/test", agent: "agent-test-engineer", description: "Criação e execução de suítes de teste automatizadas (AAA/TDD)." },
@@ -399,7 +421,9 @@ const KIT_BRAIN_DATA = {
     { id: "wf-deploy", type: "workflow", name: "/deploy", agent: "agent-devops-engineer", description: "Validações pré-voo e publicação segura de releases em produção." },
     { id: "wf-status", type: "workflow", name: "/status", agent: "agent-orchestrator", description: "Exibe o quadro de progresso e estado operacional do projeto." },
     { id: "wf-api-design", type: "workflow", name: "/api-design", agent: "agent-api-designer", description: "Criação de contratos de API e especificações OpenAPI." },
-    { id: "wf-enhance", type: "workflow", name: "/enhance", agent: "agent-frontend-specialist", description: "Evolução incremental de funcionalidades em código existente." }
+    { id: "wf-enhance", type: "workflow", name: "/enhance", agent: "agent-frontend-specialist", description: "Evolução incremental de funcionalidades em código existente." },
+    { id: "wf-email", type: "workflow", name: "/email", agent: "agent-email-marketing-specialist", description: "Campanhas de e-mail, sequências de cold outreach, templates tabulares e scraping de leads." },
+    { id: "wf-blog", type: "workflow", name: "/blog", agent: "agent-blog-content-specialist", description: "Artigos de blog e Thought Leadership com validação de fontes no NotebookLM e co-construção socrática." }
   ],
 
   // Gerador dinâmico de conexões (Links)
@@ -444,12 +468,20 @@ const KIT_BRAIN_DATA = {
       ["agent-marketing-analyst", "agent-meta-ads-specialist"],
       ["agent-marketing-analyst", "agent-google-analytics-specialist"],
       ["agent-video-script-architect", "agent-copywriter-ux"],
+      ["agent-video-script-architect", "agent-motion-video-engineer"],
+      ["agent-motion-video-engineer", "agent-css-architect"],
       ["agent-social-media-designer", "agent-copywriter-ux"],
       ["agent-test-engineer", "agent-qa-automation-engineer"],
       ["agent-debugger", "agent-code-archaeologist"],
       ["agent-security-auditor", "agent-penetration-tester"],
       ["agent-devops-engineer", "agent-performance-optimizer"],
-      ["agent-business-strategist", "agent-product-manager"]
+      ["agent-business-strategist", "agent-product-manager"],
+      ["agent-email-marketing-specialist", "agent-copywriter-ux"],
+      ["agent-email-marketing-specialist", "agent-business-strategist"],
+      ["agent-email-marketing-specialist", "agent-marketing-analyst"],
+      ["agent-blog-content-specialist", "agent-seo-specialist"],
+      ["agent-blog-content-specialist", "agent-copywriter-ux"],
+      ["agent-blog-content-specialist", "agent-integration-engineer"]
     ];
 
     agentPairs.forEach(([src, tgt]) => {
@@ -471,7 +503,7 @@ const KIT_BRAIN_DATA = {
 
   // Estatísticas calculadas dinamicamente
   getStats: function() {
-    const stats = { agent: 0, workflow: 0, skill: 54, category: 0, sdd: 0 };
+    const stats = { agent: 0, workflow: 0, skill: 62, category: 0, sdd: 0 };
     this.nodes.forEach(n => {
       if (stats[n.type] !== undefined) stats[n.type]++;
     });

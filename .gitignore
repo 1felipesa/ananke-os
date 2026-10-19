@@ -67,3 +67,9 @@ venv.bak/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# Local Scratch, Logs & Session Profiles
+scratch/
+.ananke/
+*.log
+

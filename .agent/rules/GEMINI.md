@@ -53,12 +53,14 @@ trigger: always_on
 | **Copywriting Persuasivo & Microcopy UX** | `copywriter-ux` | `copywriting-frameworks`, `ux-writing` |
 | **Arte Social & Carrosséis** | `social-media-designer`| `social-content-design`, `copywriting-frameworks` |
 | **Roteiros de Vídeo (Reels & YouTube)**| `video-script-architect` | `video-scriptwriting-frameworks`, `copywriting-frameworks` |
+| **Edição de Vídeo & Motion Programático**| `motion-video-engineer` | `programmatic-video-editing`, `video-scriptwriting-frameworks`, `premium-css-patterns` |
 | **Estratégia, Preços & Bundles** | `business-strategist` | `pricing-strategy`, `brainstorming` |
 | **Segurança & Auditoria OWASP** | `security-auditor` | `vulnerability-scanner`, `red-team-tactics` |
 | **Testes Automatizados & QA** | `test-engineer` | `testing-patterns`, `tdd-workflow`, `webapp-testing` |
 | **Refatoração & Código Legado** | `code-archaeologist` | `clean-code`, `refactoring-patterns` |
+| **Artigos de Blog & Síntese NotebookLM** | `blog-content-specialist` | `notebooklm-knowledge-retrieval`, `seo-blog-architecture`, `thought-leadership-writing` |
 
-*Para inventário completo de todos os 35 agentes e 54 skills, consulte `./.agent/ARCHITECTURE.md`.*
+*Para inventário completo de todos os agentes e skills, consulte `./.agent/ARCHITECTURE.md`.*
 
 ---
 

@@ -1,0 +1,60 @@
+<!-- ==========================================================================
+     CAMADA 2: KINETIC CAPTION ENGINE (Legenda Dinâmica de Alta Retenção)
+     Posicionamento Seguro: Y = 1360px a 1480px
+     Regra de Ouro: Máximo 2 a 3 palavras na tela por vez
+     ========================================================================== -->
+
+<div class="caption-container">
+  <div class="caption-bubble">
+    <!-- As palavras faladas recebem data-start e data-end em segundos via Whisper -->
+    <span class="word" data-start="0.00" data-end="0.25">ESTE</span>
+    <span class="word active" data-start="0.26" data-end="0.60">É O SEGREDO</span>
+    <span class="word" data-start="0.61" data-end="0.95">DO VÍDEO</span>
+  </div>
+</div>
+
+<style>
+.caption-container {
+  position: absolute;
+  top: var(--safe-caption-top);
+  left: var(--safe-margin-x);
+  right: var(--safe-margin-x);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.caption-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 12px 28px;
+  background: rgba(10, 12, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--brand-radius-pill);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.word {
+  font-family: var(--brand-font-display);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+  display: inline-block;
+  transition: transform 0.1s ease-out;
+}
+
+/* Palavra com o foco da fala no milissegundo exato */
+.word.active {
+  color: var(--brand-accent);
+  transform: scale(1.14);
+  text-shadow: 0 0 24px var(--brand-accent);
+}
+</style>

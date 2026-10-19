@@ -1,0 +1,129 @@
+<!-- ==========================================================================
+     CAMADA 3: FACE CARD & AMBIENT MASK (Card do Apresentador)
+     Posicionamento Seguro Padrão: Y = 840px a 1320px
+     Estados Suportados: .layout-center, .layout-side, .layout-pip, .layout-fullscreen
+     ========================================================================== -->
+
+<div class="face-card-wrapper layout-center" id="faceCard" aria-label="Presenter video card">
+  <!-- Brilho Ambiente Traseiro (Ambient Glow) -->
+  <div class="face-card-glow"></div>
+
+  <!-- Moldura de Corte do Vídeo do Apresentador -->
+  <div class="face-card-frame glass-panel">
+    <video class="face-video" src="/take.mp4" playsinline muted autoplay loop></video>
+    
+    <!-- Badge de Identificação do Apresentador ou Tópico -->
+    <div class="face-card-badge">
+      <span class="indicator-dot"></span>
+      <span class="badge-text" id="speakerLabel">DIRETOR TÉCNICO</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.face-card-wrapper {
+  position: absolute;
+  z-index: 30;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 1. Estado Central (Padrão para Falas Diretas) */
+.face-card-wrapper.layout-center {
+  top: 840px;
+  left: 90px;
+  width: 900px;
+  height: 480px;
+}
+
+/* 2. Estado Lateral (Abre 60% da tela para dados da Camada 4) */
+.face-card-wrapper.layout-side {
+  top: 920px;
+  left: 560px;
+  width: 430px;
+  height: 400px;
+}
+
+/* 3. Estado Pílula / Picture-in-Picture */
+.face-card-wrapper.layout-pip {
+  top: 1040px;
+  left: 680px;
+  width: 310px;
+  height: 310px;
+}
+.face-card-wrapper.layout-pip .face-card-frame {
+  border-radius: 50%;
+}
+
+/* 4. Estado Tela Cheia (Falas de Abertura / Encerramento) */
+.face-card-wrapper.layout-fullscreen {
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1920px;
+  border-radius: 0;
+}
+.face-card-wrapper.layout-fullscreen .face-card-frame {
+  border-radius: 0;
+  border: none;
+}
+
+/* Brilho Ambiente Traseiro */
+.face-card-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, var(--brand-primary) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Moldura do Vídeo com Borda Luminosa */
+.face-card-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--brand-radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: var(--brand-surface-solid);
+}
+
+.face-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Badge do Apresentador */
+.face-card-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(10, 12, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--brand-radius-pill);
+  backdrop-filter: blur(12px);
+}
+
+.face-card-badge .indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-accent);
+  box-shadow: 0 0 10px var(--brand-accent);
+}
+
+.face-card-badge .badge-text {
+  font-family: var(--brand-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--brand-text);
+  text-transform: uppercase;
+}
+</style>
