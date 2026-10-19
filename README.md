@@ -11,6 +11,7 @@
 [![Agents](https://img.shields.io/badge/Specialists-38%20Agents-FACC15?style=for-the-badge)](.agent/docs/categorias.md)
 [![Skills](https://img.shields.io/badge/Skills-62%20Modules-00D2FF?style=for-the-badge)](.agent/docs/categorias.md)
 [![Checklist](https://img.shields.io/badge/Quality%20Gate-6%2F6%20Passed-10B981?style=for-the-badge)](.agent/scripts/)
+[![Last Update](https://img.shields.io/badge/Last%20Update-2026--10--19-brightgreen?style=for-the-badge)](CHANGELOG.md)
 
 <br>
 
@@ -67,7 +68,7 @@ O Ananke OS possui um **gêmeo digital topológico tridimensional** localizado e
 <div align="center">
 
 | Cor | Elemento | Quantidade | Descrição |
-| :---: | :--- | :--- :--- | :--- |
+| :---: | :--- | :--- | :--- |
 | 🟡 | **Agentes Especialistas** | **38 nós** | Personas ativas de IA com raciocínio hiperfocado. |
 | 🔴 | **Workflows de Comando** | **24 nós** | Procedimentos acionados por `/comando` no chat. |
 | 🔵 | **Skills & Conexões** | **62 nós** | Módulos técnicos com partículas luminosas em tempo real. |
@@ -126,23 +127,21 @@ Comandos rápidos para acionar os pipelines mestres do Ananke OS:
 
 ---
 
-## 🌟 Novidades da Plataforma (Release Recente)
+## 🔄 6. Últimas Atualizações // Last Updates (`v2.4.0` • Outubro 2026)
 
-- 🎬 **HyperFrames Parametric Motion Engine & Google Flow Bridge (`/reel`):**
-  - Motor de edição programática vertical (1080×1920) em 5 camadas: Take bruto, legendas temporais cinéticas, máscara/card dinâmico de rosto, motion graphics paramétricos a cada 2-3s e sound design.
-  - Curvas de aceleração física via GSAP (`back.out(1.7)` com overshoot orgânico), safe zones para Instagram Reels/TikTok e design tokens de marca adaptáveis (`video-tokens.css`).
-  - Automação headless via Playwright para o estúdio de IA criativa **Google Flow** (`flow.google.com`), permitindo listar projetos, descarregar assets e gerar clipes de B-roll usando os créditos Pro da sua conta Google sem configurações manuais repetitivas.
-- 💡 **NotebookLM Thought Leadership Suite (`/blog`):**
-  - Engenharia de artigos analíticos e liderança intelectual ancorados estritamente em cadernos do **Google NotebookLM** via conector MCP dedicado.
-  - Processo de co-construção socrática em blocos iterativos (Tese, Antítese, Síntese e Aplicação), com eliminação cirúrgica de clichês de IA (*AI Fluff*) e citações verificáveis.
-- ✉️ **E-mail Marketing & Outbound Leads Suite (`/email`):**
-  - Criação completa de sequências de prospecção ativa B2B (Cold Outreach), auditoria de entregabilidade DNS (SPF, DKIM, DMARC) e cálculo preditivo de pontuação anti-spam.
-  - Engenharia de templates de e-mail em HTML tabular responsivo testado contra 60+ clientes (Outlook desktop, Gmail, Apple Mail) com espelho em Plain Text.
-  - Raspagem ética da web e enriquecimento tabular de contatos com validação de sintaxe.
+> 📜 **Histórico completo de releases e versões:** [Consulte o `CHANGELOG.md`](CHANGELOG.md)
+
+| Módulo / Inovação | Especialista Líder | Destaques Técnicos |
+| :--- | :--- | :--- |
+| **🎬 HyperFrames Parametric Motion Engine** | `@motion-video-engineer` | Edição vertical (1080×1920) em 5 camadas (Take, Legenda Cinética, Rosto em Card, Gráficos a cada 2-3s e Sound Design). Curvas físicas GSAP (`back.out(1.7)`), safe zones e design tokens adaptáveis (`video-tokens.css`). |
+| **🌐 Google Flow Bridge** | `@motion-video-engineer` | Ponte autônoma via Playwright (`google_flow_bridge.py`) conectada a `flow.google.com`. Sessão única persistente em `~/.ananke/google_flow_profile/` usando créditos Pro para gerar e baixar B-rolls de IA (Veo/Imagen). |
+| **💡 NotebookLM Thought Leadership** | `@blog-content-specialist` | Artigos analíticos e liderança técnica rigorosamente ancorados em cadernos do Google NotebookLM via MCP. Co-construção dialética em 4 blocos e trava *Zero AI Fluff*. |
+| **✉️ E-mail Marketing & Outbound Leads** | `@email-marketing-specialist` | Cadências de Cold Email B2B anti-spam, conformidade DNS (SPF, DKIM, DMARC), templates tabulares testados para Outlook desktop/Gmail e raspagem ética de contatos corporativos em CSV. |
+| **🧠 3D Brain Map Expansion** | `@orchestrator` | Constelação neural WebGL atualizada com 38 Agentes, 62 Skills e 24 Workflows interligados em tempo real. |
 
 ---
 
-## 🛡️ 6. Qualidade Inviolável: Master Checklist (6 Gates Automatizados)
+## 🛡️ 7. Qualidade Inviolável: Master Checklist (6 Gates Automatizados)
 
 Nenhum código é considerado pronto no Ananke OS sem passar pelo script unificado de auditoria:
 
@@ -161,7 +160,7 @@ A esteira de verificação executa 6 verificações rigorosas:
 
 ---
 
-## 🚀 7. Como Usar o Ananke OS
+## 🚀 8. Como Usar o Ananke OS
 
 ### Opção A: Usar como Template no GitHub (Recomendado)
 1. Clique no botão **"Use this template"** no topo deste repositório.
@@ -182,7 +181,7 @@ cd meu-projeto
 
 ---
 
-## 📁 8. Estrutura do Repositório
+## 📁 9. Estrutura do Repositório
 
 ```plaintext
 anankeos/
@@ -193,8 +192,10 @@ anankeos/
 ├── assets/                  # Identidade Visual, Logotipos e Mockups do Ecossistema
 ├── brain-map/               # Mapeamento Tridimensional Neural Interativo (WebGL)
 ├── data/                    # Pipeline de Ingestão e Relatórios Batch Automatizados
+├── docs/                    # Planos Técnicos de Arquitetura de Módulos (PLAN.md)
 ├── integrations/            # Conectores de APIs, Analytics, Meta Ads e Servidores MCP
 ├── .gitignore               # Blindagem Estrita de Credenciais e Ambientes
+├── CHANGELOG.md             # Histórico Completo de Versões e Atualizações
 ├── LICENSE                  # Licença MIT de Código Aberto
 ├── requirements-optional.txt# Dependências Opcionais para Scripts de Skills
 └── README.md                # O Cartão de Visitas do Sistema
@@ -202,7 +203,7 @@ anankeos/
 
 ---
 
-## 🔧 9. Desenvolvimento Continuado & Contribuição
+## 🔧 10. Desenvolvimento Continuado & Contribuição
 
 O **Ananke OS** é um ecossistema vivo, desenhado para expansão contínua por engenheiros, pesquisadores de IA e equipes de produto que buscam transcender os débitos técnicos do *vibe coding* e estabelecer um novo patamar de engenharia de precisão.
 
