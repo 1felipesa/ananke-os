@@ -3,7 +3,7 @@
 > **Spec-Driven Autonomy // Zero Vibe Coding**  
 > *Visualizador Tridimensional e Mapeamento Ontológico do Ecossistema Ananke OS*
 
-O **Brain Map** é uma aplicação visual interativa em 3D WebGL que renderiza todo o ecossistema do **Ananke OS** como uma constelação neural viva. Foi projetado para acelerar o onboarding de novos membros da equipe, clientes e desenvolvedores, tornando tangível a conexão entre todos os 35 agentes, 54 skills, 21 comandos e a esteira de governança SDD.
+O **Brain Map** é uma aplicação visual interativa em 3D WebGL que renderiza todo o ecossistema do **Ananke OS** como uma constelação neural viva. Foi projetado para acelerar o onboarding de novos membros da equipe, clientes e desenvolvedores, tornando tangível a conexão entre todos os 38 agentes, 62 skills, 24 comandos e a esteira de governança SDD.
 
 ---
 
@@ -31,9 +31,9 @@ Para assegurar máxima distinção cromática e contraste visual, os nós utiliz
 
 | Cor | Significado | Quantidade | Descrição |
 | :--- | :--- | :---: | :--- |
-| 🟡 **Amarelo Ouro** (`#FACC15`) | **Agentes Especialistas** | 35 nós | Personas ativas de IA responsáveis pela execução especializada. |
-| 🔴 **Vermelho Coral** (`#EF4444`) | **Workflows de Comando** | 21 nós | Comandos `/slash` de entrada acionados pelo operador no chat. |
-| 🔵 **Azul / Ciano** (`#00D2FF`) | **Skills de Engenharia** | 54 nós | Módulos de conhecimento técnico carregados sob demanda. |
+| 🟡 **Amarelo Ouro** (`#FACC15`) | **Agentes Especialistas** | 38 nós | Personas ativas de IA responsáveis pela execução especializada. |
+| 🔴 **Vermelho Coral** (`#EF4444`) | **Workflows de Comando** | 24 nós | Comandos `/slash` de entrada acionados pelo operador no chat. |
+| 🔵 **Azul / Ciano** (`#00D2FF`) | **Skills de Engenharia** | 62 nós | Módulos de conhecimento técnico carregados sob demanda. |
 | 🟠 **Laranja Quente** (`#FB923C`) | **Macro-Categorias** | 8 núcleos | Grandes núcleos funcionais de serviço do kit. |
 | 🟢 **Verde Esmeralda** (`#10B981`)| **Fases do SDD** | 4 fases | Esteira mandatória de governança (Specify, Plan, Tasks, Implement). |
 

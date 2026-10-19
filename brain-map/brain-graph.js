@@ -13,9 +13,39 @@ let isAutoRotating = true;
 let userInteracted = false;
 
 document.addEventListener("DOMContentLoaded", () => {
+  updateUIStats();
   initBrainMap();
   initUIEvents();
 });
+
+function updateUIStats() {
+  if (typeof KIT_BRAIN_DATA === "undefined" || !KIT_BRAIN_DATA.getStats) return;
+  const stats = KIT_BRAIN_DATA.getStats();
+
+  const agentLegend = document.querySelector('.legend-item[data-filter="agent"] .legend-count');
+  if (agentLegend) agentLegend.textContent = stats.agent;
+
+  const wfLegend = document.querySelector('.legend-item[data-filter="workflow"] .legend-count');
+  if (wfLegend) wfLegend.textContent = stats.workflow;
+
+  const catLegend = document.querySelector('.legend-item[data-filter="category"] .legend-count');
+  if (catLegend) catLegend.textContent = stats.category;
+
+  const sddLegend = document.querySelector('.legend-item[data-filter="sdd"] .legend-count');
+  if (sddLegend) sddLegend.textContent = stats.sdd;
+
+  const agentPill = document.querySelector('.stat-pill[data-filter="agent"] span:last-child');
+  if (agentPill) agentPill.textContent = `${stats.agent} Agentes`;
+
+  const wfPill = document.querySelector('.stat-pill[data-filter="workflow"] span:last-child');
+  if (wfPill) wfPill.textContent = `${stats.workflow} Workflows`;
+
+  const catPill = document.querySelector('.stat-pill[data-filter="category"] span:last-child');
+  if (catPill) catPill.textContent = `${stats.category} Núcleos`;
+
+  const sddPill = document.querySelector('.stat-pill[data-filter="sdd"] span:last-child');
+  if (sddPill) sddPill.textContent = `${stats.sdd} Fases SDD`;
+}
 
 function initBrainMap() {
   const container = document.getElementById("canvas-container");

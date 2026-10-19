@@ -131,7 +131,7 @@ const KIT_BRAIN_DATA = {
       description: "Modelagem de negócios, precificação socrática, pacotes comerciais e priorização de escopo."
     },
 
-    // --- 3. AGENTES ESPECIALISTAS (AMARELO) - 35 AGENTES ---
+    // --- 3. AGENTES ESPECIALISTAS (AMARELO) - 38 AGENTES ---
     {
       id: "agent-orchestrator",
       type: "agent",
